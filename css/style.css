@@ -1,0 +1,429 @@
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../font/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../font/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* roboto-900 - latin */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+         url('../font/roboto-v30-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../font/roboto-v30-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+html{
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 2em;
+    padding-top: 0;
+    background-image: url(../image/41128_002-12.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(4px);
+    font-family: "Roboto";
+    font-weight: bold;
+    background-color: rgb(25, 25, 31);
+    color: #fff;  
+    min-height: 100%;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* ----------------Navigation---------------- */
+#menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    /* height: 100%; */
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+/* ----------------Wetter und Datum/Uhrzeit---------------- */
+.weatherDate{
+    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #141414ee;
+    color: #000;
+    color: #fff;
+    margin-bottom: 0.25rem;
+    padding: 0.5em;
+    font-size: 3em;
+    display: flex;
+    justify-content: space-between;
+    border: solid black;
+    border-radius: 1em;
+}
+.weather{
+    display: flex;
+}
+.weatherRest{
+    display: flex;
+    font-size: 1rem;
+}
+.weatherRest > *{
+    margin-right: 0.5em;
+}
+.date{
+    font-size: 1rem;
+}
+/* ----------------Pflanze, Begrüßung, Suchfeld---------------- */
+.plantSearch{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+    background-color: #141414ee;
+    border: solid black;
+    border-radius: 2em;
+}
+.plant{
+    color: #fff;
+    padding: 1em;
+    border: none;
+    border-radius: 2em 0 0 2em;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.plant button {
+    font-weight: 600;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    box-shadow: 0 5px #afafaf;
+    border-radius: 2em;
+    padding: 1em;
+}
+.plant button:hover {
+    background-color: #c7c7c7;
+}
+.plant button:active {
+    background-color: #c7c7c7;
+    box-shadow: 0 1px #cecece;
+    transform: translateY(4px);
+}
+.plant p{
+    margin: 0;
+    margin-bottom: 0.2em;
+}
+.plant h2{
+    margin-top: 0;
+}
+#mood{
+    font-size: 2em;
+    margin: 0;
+}
+.greeting{
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+
+}
+.search{
+    width: 33%;
+    display: flex;
+    border-radius: 0 2em 2em 0;
+    align-items: center;
+    justify-content: center;
+}
+.search form{
+    width:80%;
+    height: 20%;
+}
+.search input{
+    margin: auto;
+    border-radius: 1rem;
+    width:100%;
+    height: 100%;
+    font-size: 1.5em;
+
+}
+/* ----------------Nachrichten---------------- */
+.news{
+    max-height: 100%;
+    margin: auto;
+    margin-bottom: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;    
+}
+.news > *{
+    width: 25%;
+}
+.article{
+    max-width: 100%;
+    height: 20em;
+    margin: 0.25em;
+    padding: 0.5em;
+    border: solid black;
+    border-radius: 2em;
+    background-color: #141414ee;
+}
+.article p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+}
+.article a{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.unvisible{
+    display: none;
+}
+.news a {
+    color: #fff;
+}
+.news a:hover{
+    color: #ff00dd;
+}
+/* ----------------Links---------------- */
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+.links > *{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.25em;
+    padding: 1em;
+    background-color: #141414ee;
+    width: 20%;
+    border: solid black;
+    border-radius: 2em
+}
+.links a{
+    color: #fff;
+    text-decoration: none;
+}
+.links a:hover{
+    color: #ff00dd;
+}
+.links img{
+    max-width: 20%;
+    margin-bottom: 0.5em;
+}
+/* ----------------Login---------------- */
+
+.loginSite {
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: #fdfdfd;
+    margin: auto;
+    padding: 1em;
+    border-radius: 2em;
+    background-color: #141414ee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.loginSite h1 {
+    font-size: 2em;
+    font-weight: 700;
+    max-width: 100%;
+    text-align: center;
+}
+.loginSite p {
+    max-width: 100%;    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+.loginSite form {
+    display: flex;
+    flex-direction: row;
+    margin: 2em;
+}
+.loginSite label{
+    margin-left: 0.5em;
+}
+.loginSite input{
+    margin-left: 0.5em;
+    border-radius: 2em;
+}
+.loginSite a{
+    text-align: center;
+    color: #fff;
+}
+#send{
+    font-weight: bold;
+}
+#send:hover{
+    cursor: pointer;
+}
+.login{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+.anmeldeForm {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    margin-top: -20%; /* Negative half of height. */
+    margin-left: -20%; /* Negative half of width. */
+    border: solid #fdfdfd;
+    border-radius: 2em;
+    /* box-shadow: 2px 5px #fdfdfd; */
+    background-color: #141414ee;
+    padding: 2em;
+    padding-top: 1em;
+}
+.anmeldeForm h2{
+    margin-top: 0;
+    align-self: stretch;
+}
+.anmeldeForm form{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.anmeldeForm input{
+    border-radius: 2em;
+}
+.anmeldeForm input::placeholder{
+    color: #000;
+}
+#close{
+    max-width: 2em;
+    align-self: flex-end;
+}
+#close:hover{
+    cursor: pointer;
+}
+/* ----------------profile---------------- */
+.loginChange{
+    border-radius: 2em;
+    padding: 2em;
+    background-color: #141414ee;
+}
+.loginChange form{
+    display: flex;
+    flex-direction: column;
+}
+.loginChange input{
+    margin: 0.5em 0;
+}
+/* ----------------Allgemein---------------- */
+.message{
+    display: flex;
+    flex-direction: column;
+    background-color: #141414ee;
+    color: #fdfdfd;
+    border-radius: 2em;
+    padding: 1em;
+}
+.message a{
+    color: #fdfdfd;
+}
+.message a:hover{
+    color: #ff00dd;
+}
+/* ----------------Admin---------------- */
+.adminPage{
+    border-radius: 2em;
+    padding: 2em;
+    background-color: #141414ee;
+    
+}
+.adminPage img{
+    width: 1em;
+    cursor: pointer;
+}
+table{
+    border-spacing: 5em 0.5em;
+}
+td{
+    text-align: center;
+}
+.adminPage button{
+    cursor: pointer;
+    border-radius: 2em;
+}
